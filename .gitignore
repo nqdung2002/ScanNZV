@@ -2,6 +2,8 @@
 /test
 /log
 *.pyc
-
+.env
 log.json
 /nuclei-templates
+replacements.txt
+.idea/

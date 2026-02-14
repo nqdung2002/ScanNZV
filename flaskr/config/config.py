@@ -8,10 +8,10 @@ class Config:
     TEMPLATE_AUTO_RELOAD = True
     
     # Set up mail server
-    MAIL_SERVER = 'smtp.gmail.com'
-    MAIL_PORT = '587'
-    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.getenv("MAIL_USERNAME")
+    MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
+    MAIL_SERVER   = os.getenv("MAIL_SERVER", "smtp.gmail.com")
+    MAIL_PORT     = int(os.getenv("MAIL_PORT", "587"))
+    MAIL_USE_TLS  = os.getenv("MAIL_USE_TLS", "true").lower() == "true"
     MAIL_USE_SSL = False
-    MAIL_USERNAME = 'vtscanningtool@gmail.com'
-    MAIL_PASSWORD = 'zflo koln cwjf xjoc'
-    MAIL_DEFAULT_SENDER = ('Công cụ quét bảo mật', 'vtscanningtool@gmail.com')
+    MAIL_DEFAULT_SENDER = ('ScanNZV', MAIL_USERNAME)
